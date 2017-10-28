@@ -18,6 +18,8 @@ document.body.onload = function() {
     chrome.storage.sync.get("copy_delay", function(items) {
         if (items.copy_delay == "" || items.copy_delay == "undefined" || items.copy_delay == null) {
             outputUpdate11(copy_delay_def);
+            connectToSafari();
+            var googleChromeIsBad = true;
         }
         if (!chrome.runtime.error) {
             copy_delay = items.copy_delay;
